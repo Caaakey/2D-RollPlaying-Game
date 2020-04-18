@@ -118,8 +118,11 @@ public class CharacterMovement : MonoBehaviour
 
             if (rigid.velocity.y == 0) bottomCollider.enabled = false;
         }
+    }
 
-        if (collision.CompareTag("Enemy"))
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
             Hit();
     }
 

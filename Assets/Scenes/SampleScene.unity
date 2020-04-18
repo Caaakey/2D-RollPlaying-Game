@@ -1653,7 +1653,7 @@ GameObject:
   - component: {fileID: 1444620861}
   - component: {fileID: 1444620860}
   - component: {fileID: 1444620859}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1731,6 +1731,9 @@ MonoBehaviour:
   spRenderer: {fileID: 1444620860}
   speed: 1.5
   jumpPower: 3.5
+  isLeft: 0
+  MaxHp: 10
+  Damage: 1
 --- !u!212 &1444620860
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1816,7 +1819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1875163718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1920,7 +1923,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.38, y: 0.48}
+  m_Size: {x: 0.58, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -1943,8 +1946,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.57, y: 0.4}
-    newSize: {x: 0.38, y: 0.48}
+    oldSize: {x: 0.31, y: 0.31}
+    newSize: {x: 0.58, y: 0.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1964,10 +1967,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1983,7 +1986,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070242975}
   - component: {fileID: 2070242976}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Bottom Checker
   m_TagString: Player
   m_Icon: {fileID: 0}

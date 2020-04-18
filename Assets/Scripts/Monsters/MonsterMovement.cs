@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
-public class MonsterMovement : MonoBehaviour
+public abstract class MonsterMovement : MonoBehaviour
 {
     public enum Status : int
     {
@@ -130,15 +131,29 @@ public class MonsterMovement : MonoBehaviour
                 isMove = false;
                 var vec = CharacterModule.Get.transform.position;
 
-                if (vec.x > transform.position.x)
-                    rigid.AddForce(Vector2.left, ForceMode2D.Impulse);
-                else
-                    rigid.AddForce(Vector2.right, ForceMode2D.Impulse);
+                if (OnHit(CharacterModule.Get.Damage))
+                {
+                    animator.Play("Death", 0);
+                    rigid.simulated = false;
+                    
+                    //var clips = animator.runtimeAnimatorController.animationClips;
+                    //var clip = System.Array.Find(clips, x => x.name.Equals("Death"));
 
-                animator.Play("Hit", 0);
-                status = Status.Attack;
+                    Destroy(gameObject, animator.GetCurrentAnimatorClipInfo(0).Length);
+                }
+                else
+                {
+                    if (vec.x > transform.position.x)
+                        rigid.AddForce(Vector2.left, ForceMode2D.Impulse);
+                    else
+                        rigid.AddForce(Vector2.right, ForceMode2D.Impulse);
+
+                    animator.Play("Hit", 0);
+                    status = Status.Attack;
+                }
             }
         }
     }
 
+    protected abstract bool OnHit(float damage);
 }
