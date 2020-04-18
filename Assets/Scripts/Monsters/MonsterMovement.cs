@@ -19,14 +19,18 @@ public abstract class MonsterMovement : MonoBehaviour
     private float RangeX = 0f;
     private float waitTime = 0f;
 
+    public MonsterLocationModule Location { get; set; } = null;
+
     public void PlayMove()
     {
         animator.Play("Move", 0);
         isMove = true;
     }
 
-    public virtual void Create(float rangeX)
+    public virtual void Create(float rangeX, MonsterLocationModule location)
     {
+        Location = location;
+
         RangeX = rangeX;
         moveTime = Random.Range(1.5f, 3f);
     }

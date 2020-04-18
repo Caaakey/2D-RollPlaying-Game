@@ -11,6 +11,9 @@ public class CharacterModule : CharacterMovement
     public float Damage = 1f;
 
     private float currentHp;
+    private CharacterInventory inventory = new CharacterInventory();
+
+    public CharacterInventory GetInventory { get => inventory; }
 
     private void Awake()
     {

@@ -172,7 +172,11 @@ MonoBehaviour:
   rigid: {fileID: 8583705802985356504}
   animator: {fileID: 6954724477783923394}
   speed: 0.25
+  moneyPrefab: {fileID: 3353428195612098488, guid: b39a11df3c16c6848a82c9c0ee064f8e,
+    type: 3}
   MaxHp: 3
+  prize: 2
+  spawnTime: 5
 --- !u!61 &532925231337523219
 BoxCollider2D:
   m_ObjectHideFlags: 0
